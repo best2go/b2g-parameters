@@ -1,0 +1,35 @@
+{% extends '@WebProfiler/Profiler/layout.html.twig' %}
+
+{% block toolbar %}
+{% endblock %}
+
+{% block head %}
+    {# Optional. Here you can link to or define your own CSS and JS contents. #}
+    {# Use {{ parent() }} to extend the default styles instead of overriding them. #}
+    {{ parent() }}
+{% endblock %}
+
+{% block menu %}
+    {# This left-hand menu appears when using the full-screen profiler. #}
+    <span class="label{{ collector.count == 0 ? ' disabled' }}">
+        <span class="icon">
+            {{ include('@Best2GoParameters/icon/tools.svg') }}
+        </span>
+
+        <strong>Parameters</strong>
+
+        <span class="count">
+            <span>{{ collector.count }}</span>
+        </span>
+
+    </span>
+{% endblock %}
+
+{% block panel %}
+    <h2>Best2GoParameters</h2>
+    <div class="sf-tabs">
+        <div class="empty">
+            <p>empty</p>
+        </div>
+    </div>
+{% endblock %}
